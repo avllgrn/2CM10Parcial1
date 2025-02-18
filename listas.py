@@ -1,74 +1,54 @@
 from os import system
 from random import randrange
 
+def generaRand(tam, ini, fin):
+    l = []
+
+    i=0
+    while i  < tam:
+        l.append(randrange(ini, fin))
+        i += 1
+
+    return l
+
+def muestraLista(l):
+    tam = len(l)
+    i=0
+    while i  < tam:
+        print(f'[{i}] = {l[i]}')
+        i += 1
+
+def concatenaListas(l1, l2):
+    l3 = []
+
+    tam = len(l1)
+    i=0
+    while i  < tam:
+        l3.append(l1[i])
+        i += 1
+
+    tam = len(l2)
+    i=0
+    while i  < tam:
+        l3.append(l2[i])
+        i += 1
+
+    return l3
+
 if __name__ == '__main__':
     system('cls')
-    V = []
     n = int(input('Dame n '))
+    m = int(input('Dame m '))
 
-    i=0
-    while i<n:
-        V.append(randrange(-100, 101))
-        i += 1
+    A = generaRand(n,-100,101)
+    B = generaRand(m,-100,101)
 
-    i=0
-    while i<n:
-        print(f'V[{i}] = {V[i]}')
-        i += 1
-    print()
-    
-    s = 0
-    i=0
-    while i<n:
-        s = s + V[i]
-        i += 1
-        #print(f'V[{i}] = {V[i]}\ts = {s}')
+    C = concatenaListas(A, B)
 
-    print(f'\ns = {s}')
-    if n>0:
-        promedio = s/n
-        print(f'promedio = {promedio}')
-        i += 1
-
-    menor = V[0]
-    posMenor = 0
-    i=0
-    while i<n:
-       #print(f'menor = {menor}, = V[{posMenor}]')
-       if V[i] < menor:
-           menor = V[i]
-           posMenor = i
-       i += 1
-    print(f'menor = {menor}, = V[{posMenor}]')
-
-
-    mayor = V[0]
-    posMayor = 0
-    i=0
-    while i<n:
-       #print(f'mayor = {mayor}, = V[{posMayor}]')
-       if V[i] > mayor:
-           mayor = V[i]
-           posMayor = i
-       i += 1
-    print(f'mayor = {mayor}, = V[{posMayor}]')
-
-    menoresQuePromedio = 0
-    i=0
-    while i<n:
-        if V[i] < promedio:
-            menoresQuePromedio += 1
-        i += 1
-    print(f'Hay {menoresQuePromedio} menores que el promedio')
-
-
-    mayorQuePromedio = 0
-    i=0
-    while i<n:
-        if V[i] > promedio:
-            mayorQuePromedio += 1
-        i += 1
-    print(f'Hay {mayorQuePromedio} mayores que el promedio')
-
-
+    print('\nA')
+    muestraLista(A)
+    print('\nB')
+    muestraLista(B)
+    print('\nC')
+    muestraLista(C)
     
