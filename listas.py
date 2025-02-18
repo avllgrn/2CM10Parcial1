@@ -18,14 +18,11 @@ def muestraLista(l):
 def concatenaListas(l1, l2):
     l3 = []
 
-    tam = len(l1)
-    i = 0
-    for i in range(tam):
-        l3.append(l1[i])
+    for dato in l1:
+        l3.append(dato)
 
-    tam = len(l2)
-    for i in range(tam):
-        l3.append(l2[i])
+    for dato in l2:
+        l3.append(dato)
 
     return l3
 
