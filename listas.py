@@ -59,23 +59,35 @@ def restaVectores(V1, V2):
 
     return V3
 
+def promediaVectores(n,P1,P2,P3):
+
+    Prom = []
+
+    for i in range(n):
+        Prom.append((P1[i]+P2[i]+P3[i])/3)
+
+
+    return Prom
+
+def muestraCalificaciones(n,P1,P2,P3,Promedio):
+
+    print('Alumno',end='\t')
+    for j in range(3):
+        print(f'P{j+1}',end='\t')
+    print('Promedio\n')
+    
+    for i in range(n):
+        print(f'{i+1}\t{P1[i]}\t{P2[i]}\t{P3[i]}\t{Promedio[i]}')
+
 if __name__ == '__main__':
     system('cls')
     n = int(input('Dame n '))
-    m = int(input('Dame m '))
 
-    A = generaRand(n,0,11)
-    B = generaRand(m,0,11)
+    P1 = generaRand(n,0,11)
+    P2 = generaRand(n,0,11)
+    P3 = generaRand(n,0,11)
 
-    C = sumaVectores(A,B)
-    D = restaVectores(A,B)
+    Promedio = promediaVectores(n,P1,P2,P3)
 
-    print('\nA')
-    muestraLista(A)
-    print('\nB')
-    muestraLista(B)
-    print('\nC')
-    muestraLista(C)
-    print('\nD')
-    muestraLista(D)
+    muestraCalificaciones(n,P1,P2,P3,Promedio)
     
