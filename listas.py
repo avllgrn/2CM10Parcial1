@@ -24,7 +24,11 @@ if __name__ == '__main__':
     muestraLista(L)
     print()
 
-    del L   #Cesa de existir la lista
+    x = int(input('Qué quieres eliminar? '))
+
+    while x in L:
+        L.remove(x)
+
     print(f'L{L}, {type(L)} tam = {len(L)}')
     muestraLista(L)
     print()
