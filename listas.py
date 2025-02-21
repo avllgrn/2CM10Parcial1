@@ -24,7 +24,7 @@ if __name__ == '__main__':
     muestraLista(L)
     print()
 
-    L.clear()
+    del L   #Cesa de existir la lista
     print(f'L{L}, {type(L)} tam = {len(L)}')
     muestraLista(L)
     print()
