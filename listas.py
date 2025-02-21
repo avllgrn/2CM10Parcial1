@@ -22,15 +22,9 @@ if __name__ == '__main__':
     L = generaRand(n,0,11)
     print(f'L{L}, {type(L)} tam = {len(L)}')
     muestraLista(L)
+    print()
 
-    print(f'\nSale {L.pop()}')
+    L.clear()
     print(f'L{L}, {type(L)} tam = {len(L)}')
     muestraLista(L)
-
-    print(f'\nSale {L.pop()}')
-    print(f'L{L}, {type(L)} tam = {len(L)}')
-    muestraLista(L)
-
-    print(f'\nSale {L.pop()}')
-    print(f'L{L}, {type(L)} tam = {len(L)}')
-    muestraLista(L)
+    print()
