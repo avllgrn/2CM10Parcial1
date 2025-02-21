@@ -39,6 +39,26 @@ def acumulaVectores(l1, l2):
 
     return s
 
+def sumaVectores(V1, V2):
+
+    V3 = []
+
+    if len(V1) == len(V2):
+        for i in range(n):
+            V3.append(V1[i]+V2[i])
+
+    return V3
+
+def restaVectores(V1, V2):
+
+    V3 = []
+
+    if len(V1) == len(V2):
+        for i in range(n):
+            V3.append(V1[i]-V2[i])
+
+    return V3
+
 if __name__ == '__main__':
     system('cls')
     n = int(input('Dame n '))
@@ -47,11 +67,15 @@ if __name__ == '__main__':
     A = generaRand(n,0,11)
     B = generaRand(m,0,11)
 
-    s = acumulaVectores(A,B)
+    C = sumaVectores(A,B)
+    D = restaVectores(A,B)
 
     print('\nA')
     muestraLista(A)
     print('\nB')
     muestraLista(B)
-    print(f'\ns = {s}')
+    print('\nC')
+    muestraLista(C)
+    print('\nD')
+    muestraLista(D)
     
