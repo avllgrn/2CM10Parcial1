@@ -35,3 +35,15 @@ if __name__ == '__main__':
     for dato in B:
         print(dato)
     print()
+
+    U = A.union(B)
+    print(f'A U B={U}')
+    for dato in U:
+        print(dato)
+    print()
+
+    I = A.intersection(B)
+    print(f'A ∩ B={I}')
+    for dato in I:
+        print(dato)
+    print()
