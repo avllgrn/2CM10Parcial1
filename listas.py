@@ -9,4 +9,4 @@ if __name__ == '__main__':
 
     n = int(input('Cuántos valores? '))
     for i in range(n):
-        print(dias.get(randrange(1,8)), 'de', meses.get(randrange(1,13)))
+        print(i, '\t', dias.get(randrange(1,8)), 'de', meses.get(randrange(1,13)))
