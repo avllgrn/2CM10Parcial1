@@ -2,13 +2,14 @@ from os import system
 import Pilas
 import Colas
 
-def esCapicua(numero):
+def esPalindromo(cadena): 
     P = Pilas.Pila()
     C = Colas.Cola()
 
-    for digito in numero:
-        P.push(digito)
-        C.push(digito)
+    for caracter in cadena:
+        if caracter.isalnum():
+            P.push(caracter.lower())
+            C.push(caracter.lower())
 
     while not C.estaVacia() and not P.estaVacia():
         if P.pop() != C.pop():
@@ -18,10 +19,10 @@ def esCapicua(numero):
 if __name__ == '__main__':
     system('cls')
     
-    numero = input('Ingresa numero ')
+    cadena = input('Ingresa cadena ')
     
-    if esCapicua(numero):
-        print(f'{numero} ES capicúa =)')
+    if esPalindromo(cadena):
+        print(f'{cadena} ES palíndromo =)')
     else:
         system('cls')
-        print(f'{numero} NO es capicúa =(')
+        print(f'{cadena} NO es palíndromo =(')
