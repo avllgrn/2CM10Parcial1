@@ -1,7 +1,6 @@
 from os import system
 from random import randrange
 import Pilas
-import Colas
 
 if __name__ == '__main__':
     system('cls')
@@ -9,7 +8,8 @@ if __name__ == '__main__':
     n = int(input('Cuántos? '))
 
     Original = Pilas.Pila()
-    Cola =Colas.Cola()
+    Copia = Pilas.Pila()
+    Auxiliar = Pilas.Pila()
 
     for i in range(n):
         x = randrange(101)
@@ -18,10 +18,14 @@ if __name__ == '__main__':
     print()
 
     while not Original.estaVacia():
-        Cola.push( Original.pop() )
+        Auxiliar.push( Original.pop() )
 
-    while not Cola.estaVacia():
-        Original.push( Cola.pop() )
+    while not Auxiliar.estaVacia():
+        temp =Auxiliar.pop()
+        Original.push( temp )
+        Copia.push( temp )
 
     print('\nOriginal')
     Original.liberaMemoria()
+    print('\nCopia')
+    Copia.liberaMemoria()
