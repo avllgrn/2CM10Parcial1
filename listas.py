@@ -8,6 +8,8 @@ if __name__ == '__main__':
     n = int(input('Cuántos? '))
 
     Original = Pilas.Pila()
+    Cola = Pilas.Pila()
+    Auxiliar2 = Pilas.Pila()
 
     for i in range(n):
         x = randrange(101)
@@ -15,13 +17,14 @@ if __name__ == '__main__':
         Original.push(x)
     print()
 
-
-    Invertida = Pilas.Pila()
-
     while not Original.estaVacia():
-        Invertida.push( Original.pop() )
+        Cola.push( Original.pop() )
+
+    while not Cola.estaVacia():
+        Auxiliar2.push( Cola.pop() )
+
+    while not Auxiliar2.estaVacia():
+        Original.push( Auxiliar2.pop() )
 
     print('\nOriginal')
     Original.liberaMemoria()
-    print('\nInvertida')
-    Invertida.liberaMemoria()
