@@ -8,29 +8,26 @@ if __name__ == '__main__':
 
     n = int(input('Cuántos? '))
 
-    lista1 = []
-    lista2 = []
-    P = Pilas.Pila()
-    C = Colas.Cola()
+    diccionario = {}
+    conjunto1 = set()
+    conjunto2 = set()
     
     for i in range(n):
         x = randrange(100)
         y = randrange(100)
         print(f'Se agregan {x} y {y}')
-        lista1.append(x)
-        lista2.append(y)
-        
-    print(f'Lista1 = {lista1}')
-    print(f'Lista2 = {lista2}')
+        diccionario.update({ x:y })
+
+    print(f'diccionario = {diccionario}')
     
-    for i in range(len(lista1)):
-        P.push(lista1[i])
-        C.push(lista2[i])
-        
-    print(f'Pila')
-    P.liberaMemoria()
-    print()
-    
-    print(f'Cola')
-    C.liberaMemoria()
-    print()
+    for i in diccionario:
+        conjunto1.add(i)
+        conjunto2.add(diccionario.get(i))
+
+    conjunto3 = conjunto1.union(conjunto2)
+    conjunto4 = conjunto1.intersection(conjunto2)
+
+    print(f'conjunto1 = {conjunto1}')
+    print(f'conjunto2 = {conjunto2}')
+    print(f'conjunto3 = {conjunto3}')
+    print(f'conjunto4 = {conjunto4}')
